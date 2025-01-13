@@ -1,0 +1,15 @@
+.container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    align-items: center;
+    text-align: center;
+    width: 400px;
+    height: 200px;
+    background-color: rgb(253, 249, 249);
+    padding: 1rem;
+    border-radius: 8px;
+    z-index: 30;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.27);
+}

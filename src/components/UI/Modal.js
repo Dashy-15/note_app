@@ -1,8 +1,9 @@
+import classes from "./Modal.module.css";
 
 const Modal = (props) => {
     return (
-        <div>
-            {props.children}
+        <div className={classes.container}>
+            <div className={classes.modal}>{props.children}</div>
         </div>
     );
 }

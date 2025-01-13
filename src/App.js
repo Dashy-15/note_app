@@ -4,16 +4,20 @@ import HomePage from './components/Homepage/HomePage';
 import NoteForm from './components/Form/NoteForm';
 
 function App() {
-  const [isClick, setIsClick] = useState(false);
+  const [showForm, setShowForm] = useState(false);
 
   const showFormHandler = () => {
-    setIsClick(true);
+    setShowForm(true);
+  }
+
+  const hideFormHandler = () => {
+    setShowForm(false);
   }
 
   return (
     <Fragment>
-      <HomePage onShow={showFormHandler} />
-      {isClick && <NoteForm />}
+      <HomePage onAdd={showFormHandler} />
+      {showForm && <NoteForm onClose={hideFormHandler} />}
     </Fragment>
   );
 }

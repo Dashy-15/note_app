@@ -20,11 +20,6 @@ const HomePage = (props) => {
                 text="Add To Book"
                 onClick={props.onAdd}
                 />
-                <Button 
-                type="Submit" 
-                text="Close"
-                onClick={props.onClose}
-                />
             </div>
         </div>
     );
