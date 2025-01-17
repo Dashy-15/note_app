@@ -1,10 +1,13 @@
-import { Fragment, useState } from 'react';
+import { useState } from 'react';
 import './App.css';
 import HomePage from './components/Homepage/HomePage';
 import NoteForm from './components/Form/NoteForm';
+import NoteProvider from './Notes/NoteProvider';
+import NoteLists from './components/Lists/NoteLists';
 
 function App() {
   const [showForm, setShowForm] = useState(false);
+  
 
   const showFormHandler = () => {
     setShowForm(true);
@@ -14,11 +17,14 @@ function App() {
     setShowForm(false);
   }
 
+  
+
   return (
-    <Fragment>
+    <NoteProvider>
       <HomePage onAdd={showFormHandler} />
       {showForm && <NoteForm onClose={hideFormHandler} />}
-    </Fragment>
+      <NoteLists onEdit={showFormHandler}/>
+    </NoteProvider>
   );
 }
 
